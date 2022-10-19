@@ -91,27 +91,6 @@ namespace SlimeBotC.Commands
             await ctx.Channel.SendMessageAsync(msg).ConfigureAwait(false);
         }
 
-        [Command("trump")]
-        [Description("Hear some amazing quotes")]
-        public async Task Trump(CommandContext ctx)
-        {
-            var random = new Random();
-            string[] quotes = {"\"I have a great relationship with the blacks\"", "\"Nobody builds walls better then me, believe me\"", "\"The beauty of me is that I'm very rich\"", "\"It's freezing and snowing in New York--we need global warming!\"",
-                            "\"I beat China all the time. All the time.\"", "\"I just start kissing them. It’s like a magnet. Just kiss. I don’t even wait.\"", "\"You know, it really doesn't matter what the media write, as long as you've got a young and beautiful piece of ass.\"",
-                        "\"I've said if Ivanka weren't my daughter, perhaps I'd be dating her.\"", "\"We have a 5 billion dollar website. I have so many websites. I have them all over the place.\"", "\"All of the women on The Apprentice flirted with me--consciously or unconsciously. That's to be expected.\"",
-                    "\"My Twitter has become so powerful that I can actually make my enemies tell the truth.\"", "\"I'm their worst nightmare.\"", "\"I fully understand why her former husband left her for a man--he made a good decision.\"", "\"My fingers are long and beautiful, as, it has been well documented, are various other parts of my body.\"",
-                "\"I did try and fuck her... I moved on her like a bitch, but I couldn’t get there. And she was married.\"", "\"I Have never seen a thin person drinking Diet Coke.\""};
-
-            var embed = new DiscordEmbedBuilder
-            {
-                Description = "- Donny Boy",
-                Title = quotes[random.Next(0, quotes.Length)],
-                Color = DiscordColor.Yellow
-            };
-
-            await ctx.Channel.SendMessageAsync(embed: embed).ConfigureAwait(false);
-        }
-
         [Command("hug")]
         [Description("Send a lovely dm to your pal")]
         public async Task Hug(CommandContext ctx, [Description("Everyone you want to hug")] params DiscordMember[] users)
